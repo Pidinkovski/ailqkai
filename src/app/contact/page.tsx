@@ -9,6 +9,7 @@ export default function Contact() {
     phone: "",
     service: "setup",
     message: "",
+    website: "", // honeypot field — bots fill this, humans don't see it
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -25,7 +26,7 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("sent");
-        setFormData({ name: "", email: "", phone: "", service: "setup", message: "" });
+        setFormData({ name: "", email: "", phone: "", service: "setup", message: "", website: "" });
       } else {
         setStatus("error");
       }
@@ -145,6 +146,20 @@ export default function Contact() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] resize-none"
                         placeholder="Разкажете ни повече за вашите нужди..."
+                      />
+                    </div>
+
+                    {/* Honeypot — invisible to humans, catches bots */}
+                    <div className="absolute opacity-0 -z-10" aria-hidden="true">
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                       />
                     </div>
 
