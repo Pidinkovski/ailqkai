@@ -11,7 +11,6 @@ export default function Navbar() {
     { href: "/services", label: "Услуги" },
     { href: "/about", label: "За нас" },
     { href: "/faq", label: "Въпроси" },
-    { href: "/contact", label: "Контакт" },
   ];
 
   return (
@@ -43,7 +42,7 @@ export default function Navbar() {
               href="/contact"
               className="gradient-primary text-white px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              Свържете се
+              Контакт
             </Link>
           </div>
 
@@ -80,7 +79,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="block mt-2 gradient-primary text-white px-5 py-2 rounded-lg text-sm font-semibold text-center hover:opacity-90 transition-opacity"
             >
-              Свържете се
+              Контакт
             </Link>
           </div>
         )}
