@@ -24,7 +24,7 @@ export default function Privacy() {
       {/* Content */}
       <section className="py-12 md:py-16 bg-[#F8FAFC]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-gray max-w-none">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-gray max-w-none prose-h2:text-[#0F172A] prose-h2:font-bold prose-h2:text-xl prose-h3:text-[#1E293B] prose-h3:font-semibold">
             
             <h2>1. Кои сме ние</h2>
             <p>
