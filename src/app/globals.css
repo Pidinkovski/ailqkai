@@ -96,3 +96,18 @@ body {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.5); }
 }
+
+/* Legal pages headings */
+.prose h2 {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.prose h3 {
+  color: #1E293B !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
