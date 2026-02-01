@@ -1,0 +1,6 @@
+# ailqkai.com robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ailqkai.com/sitemap.xml
