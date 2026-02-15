@@ -28,9 +28,9 @@ export default function Services() {
       {/* Main Services */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Service 1: Setup */}
-            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+          <div className="max-w-2xl mx-auto">
+            {/* Service: Setup */}
+            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border-2 border-purple-500">
               <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6">
                 <span className="text-2xl">🛠</span>
               </div>
@@ -63,7 +63,7 @@ export default function Services() {
               </ul>
               <div className="flex items-center justify-between bg-purple-50 rounded-xl p-4">
                 <div>
-                  <span className="text-3xl font-bold text-[#0F172A]">200 лв</span>
+                  <span className="text-3xl font-bold text-[#0F172A]">99 €</span>
                   <span className="text-[#64748B] ml-2">еднократно</span>
                 </div>
                 <Link
@@ -73,58 +73,6 @@ export default function Services() {
                   Поръчай
                 </Link>
               </div>
-            </div>
-
-            {/* Service 2: Discord */}
-            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border-2 border-purple-500 relative">
-              <div className="absolute -top-3 right-6 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                ПОПУЛЯРНО
-              </div>
-              <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6">
-                <span className="text-2xl">💬</span>
-              </div>
-              <h2 className="text-2xl font-bold text-[#0F172A] mb-4">
-                Discord общност и поддръжка
-              </h2>
-              <p className="text-[#64748B] leading-relaxed mb-6">
-                Присъединете се към нашата ексклузивна Discord общност. Получавате 
-                постоянна поддръжка, помощ с конфигурации, съвети и достъп до 
-                общност от хора, които също използват AI асистенти.
-              </p>
-              <h3 className="font-semibold text-[#0F172A] mb-3">Какво включва:</h3>
-              <ul className="space-y-2 mb-6">
-                {[
-                  "Достъп до частен Discord сървър",
-                  "Приоритетна техническа поддръжка",
-                  "Помощ при проблеми и обновления",
-                  "Споделяне на идеи и трикове",
-                  "Ексклузивни ръководства и материали",
-                  "Система за support тикети",
-                  "Общност от AI ентусиасти",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start space-x-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-[#0F172A]">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex items-center justify-between bg-purple-50 rounded-xl p-4">
-                <div>
-                  <span className="text-3xl font-bold text-[#0F172A]">20 лв</span>
-                  <span className="text-[#64748B] ml-2">/месец</span>
-                </div>
-                <Link
-                  href="/contact"
-                  className="gradient-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm"
-                >
-                  Абонирай се
-                </Link>
-              </div>
-              <p className="text-sm text-green-600 mt-3 text-center font-medium">
-                🎁 1 месец безплатно при поръчка на настройка!
-              </p>
             </div>
           </div>
         </div>
@@ -169,6 +117,51 @@ export default function Services() {
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
                 <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 bg-[#F8FAFC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
+              Как работи?
+            </h2>
+            <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
+              Три прости стъпки до вашия AI асистент
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Свържете се с нас",
+                description:
+                  "Попълнете формата за контакт или ни пишете. Ще обсъдим вашите нужди и ще ви предложим най-доброто решение.",
+              },
+              {
+                step: "02",
+                title: "Настройваме AI-то",
+                description:
+                  "Нашият екип инсталира, конфигурира и тества вашия AI асистент. Всичко е готово за часове.",
+              },
+              {
+                step: "03",
+                title: "Работите по-умно",
+                description:
+                  "Започвате да използвате вашия асистент веднага. Плюс — получавате достъп до нашата общност за поддръжка.",
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative">
+                <div className="text-7xl font-black text-purple-100 mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3">{item.title}</h3>
+                <p className="text-[#64748B] leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

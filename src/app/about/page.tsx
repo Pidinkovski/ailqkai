@@ -101,7 +101,7 @@ export default function About() {
             {[
               { value: "24/7", label: "Достъпност" },
               { value: "100%", label: "Фокус върху BG пазара" },
-              { value: "200 лв", label: "Пълна настройка" },
+              { value: "99 €", label: "Пълна настройка" },
               { value: "1 час", label: "Средно време за отговор" },
             ].map((stat, i) => (
               <div key={i}>

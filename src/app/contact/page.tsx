@@ -126,9 +126,7 @@ export default function Contact() {
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] bg-white"
                         >
-                          <option value="setup">Инсталация и настройка (200 лв)</option>
-                          <option value="discord">Discord абонамент (20 лв/мес)</option>
-                          <option value="both">И двете</option>
+                          <option value="setup">Инсталация и настройка (99 €)</option>
                           <option value="corporate">Корпоративно решение</option>
                           <option value="other">Друго / Въпрос</option>
                         </select>
@@ -207,9 +205,9 @@ export default function Contact() {
               </div>
 
               <div className="bg-purple-50 rounded-2xl p-8 border border-purple-100">
-                <h3 className="font-bold text-[#0F172A] mb-3">🎁 Специална оферта</h3>
+                <h3 className="font-bold text-[#0F172A] mb-3">🚀 Започнете сега</h3>
                 <p className="text-[#64748B] text-sm leading-relaxed">
-                  Поръчайте настройка (200 лв) и получете <strong className="text-purple-600">1 месец безплатен</strong> достъп до Discord общността!
+                  Поръчайте пълна инсталация и настройка за само <strong className="text-purple-600">99 €</strong> и получете вашия персонален AI асистент!
                 </p>
               </div>
             </div>
