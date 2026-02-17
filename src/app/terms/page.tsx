@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Общи условия — AilqkAI",
@@ -13,7 +14,7 @@ export default function Terms() {
       {/* Hero */}
       <section className="gradient-hero py-16 md:py-20 relative overflow-hidden">
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Общи условия
           </h1>
           <p className="text-gray-300">
@@ -23,9 +24,9 @@ export default function Terms() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16 bg-[#F8FAFC]">
+      <AnimatedSection className="py-12 md:py-20 bg-[#F8FAFC]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 prose prose-gray max-w-none prose-h2:text-[#0F172A] prose-h2:font-bold prose-h2:text-xl prose-h3:text-[#1E293B] prose-h3:font-semibold">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100/80 prose prose-gray max-w-none prose-h2:text-[#0F172A] prose-h2:font-bold prose-h2:text-xl prose-h3:text-[#1E293B] prose-h3:font-semibold prose-a:text-purple-600 prose-a:hover:text-purple-700 prose-a:transition-colors">
             <h2>1. Общи положения</h2>
             <p>
               Настоящите Общи условия уреждат отношенията между{" "}
@@ -234,13 +235,13 @@ export default function Terms() {
           <div className="mt-8 text-center">
             <Link
               href="/"
-              className="text-purple-600 hover:text-purple-700 font-medium"
+              className="text-purple-600 hover:text-purple-700 font-medium underline-offset-4 hover:underline transition-colors py-2 min-h-[44px] inline-flex items-center"
             >
               ← Обратно към началната страница
             </Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

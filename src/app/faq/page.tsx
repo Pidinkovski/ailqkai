@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const faqs = [
   {
     question: "Какво точно е AI асистент?",
     answer:
-      "AI асистентът е софтуер с изкуствен интелект, който работи на вашия компютър или виртуална машина. На практика може да прави абсолютно всичко, което се извършва на компютър или лаптоп, с допълнението, че има достъп до информация от целия свят. Той може да ви помага с писане на текстове, анализ на документи, отговаряне на въпроси, автоматизация на задачи и много повече — 24 часа в денонощието, 7 дни в седмицата.",
+      "AI асистентът е софтуер с изкуствен интелект, който работи на вашия компютър или виртуална машина. На практика може да прави абсолютно всичко, което се извършва на компютър или лаптоп, с допълнението, че има достъп до информация от целия свят. Той може да работи с браузъра като човек, клика и пише вместо вас, да ви помага с писане на текстове, анализ на документи, отговаряне на въпроси, автоматизация на задачи и много повече — 24 часа в денонощието, 7 дни в седмицата.",
   },
   {
     question: "Работите ли с компании?",
@@ -50,14 +52,14 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden">
+    <div className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-gray-300 transition-colors">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50/80 transition-colors min-h-[44px] sm:min-h-0"
       >
-        <span className="font-semibold text-[#0F172A] pr-4">{question}</span>
+        <span className="font-semibold text-[#0F172A] pr-4 text-left">{question}</span>
         <svg
-          className={`w-5 h-5 text-[#64748B] flex-shrink-0 transition-transform ${
+          className={`w-5 h-5 text-[#64748B] flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -72,11 +74,21 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           />
         </svg>
       </button>
-      {isOpen && (
-        <div className="px-6 pb-6 bg-white">
-          <p className="text-[#64748B] leading-relaxed">{answer}</p>
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-6 bg-white">
+              <p className="text-[#64748B] leading-relaxed">{answer}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -90,7 +102,7 @@ export default function FAQ() {
           <div className="absolute bottom-20 right-20 w-72 h-72 bg-indigo-500 rounded-full blur-[120px]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Често задавани въпроси
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -100,7 +112,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ List */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <AnimatedSection className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-4">
             {faqs.map((faq, i) => (
@@ -108,7 +120,7 @@ export default function FAQ() {
             ))}
           </div>
 
-          <div className="mt-12 text-center bg-white rounded-2xl p-8 border border-gray-100">
+          <div className="mt-12 text-center bg-white rounded-2xl p-8 border border-gray-100/80 card-hover">
             <h3 className="text-xl font-bold text-[#0F172A] mb-3">
               Не намерихте отговор?
             </h3>
@@ -117,13 +129,13 @@ export default function FAQ() {
             </p>
             <Link
               href="/contact"
-              className="inline-block gradient-primary text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center gradient-primary text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity btn-interactive min-h-[44px]"
             >
               Пишете ни →
             </Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

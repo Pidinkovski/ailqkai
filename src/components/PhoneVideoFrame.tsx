@@ -30,6 +30,7 @@ export default function PhoneVideoFrame() {
               playsInline
               autoPlay
               loop
+              muted
               className="w-full h-full object-cover"
               preload="metadata"
             >
@@ -67,6 +68,7 @@ export default function PhoneVideoFrame() {
               autoPlay
               loop
               playsInline
+              muted
               className="w-full h-full object-contain"
             />
             <button

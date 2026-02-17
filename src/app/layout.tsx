@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin", "cyrillic"] });
+const manrope = Manrope({
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ailqkai.com"),
   title: "ailqkai — Професионална настройка на AI асистенти | България",
   description:
     "Настройваме персонални AI асистенти за хора и бизнеси в България. Еднократна инсталация, сигурна конфигурация, постоянна поддръжка чрез Discord.",
@@ -31,6 +35,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,7 +62,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.className}>
+      <body className={manrope.className}>
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />

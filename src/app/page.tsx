@@ -15,34 +15,40 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8 shadow-[0_0_20px_rgba(74,222,128,0.25),0_0_40px_rgba(74,222,128,0.1)]">
                 <div className="pulse-dot" />
                 <span className="text-green-400 text-sm font-medium">
                   Приемаме нови клиенти
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Вашият <span className="text-gradient">AI асистент</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Вашият{" "}
+                <span className="text-gradient text-gradient-glow">
+                  AI асистент
+                </span>
                 <br />
                 настроен от професионалисти
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed">
-                Инсталираме, конфигурираме и настройваме персонален AI асистент
-                специално за вашите нужди. Сигурно, бързо и без главоболия.
-              </p>
+              <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0 space-y-4">
+                <p className="md:whitespace-nowrap">Изкуствен интелект, който действително прави неща.</p>
+                <p>
+                  Инсталираме, конфигурираме и настройваме персонален AI
+                  асистент специално за вашите нужди.
+                </p>
+              </div>
 
               <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
                 <Link
                   href="/contact"
-                  className="gradient-primary text-white px-8 py-4 rounded-xl text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-500/25 w-full sm:w-auto"
+                  className="gradient-primary text-white px-8 py-4 rounded-xl text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-500/25 w-full sm:w-auto text-center btn-interactive min-h-[44px] flex items-center justify-center"
                 >
                   Искам AI асистент →
                 </Link>
                 <Link
                   href="/services"
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all w-full sm:w-auto"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center btn-interactive min-h-[44px] flex items-center justify-center"
                 >
                   Научете повече
                 </Link>
@@ -56,12 +62,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 right-0">
+        {/* Mobile: gradient fade for smooth transition (no wave = no line) */}
+        <div className="md:hidden absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#F8FAFC]" />
+        {/* Desktop: wave divider */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 overflow-hidden">
           <svg
             viewBox="0 0 1440 120"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="block w-full"
           >
             <path
               d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
@@ -107,7 +116,7 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+                className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-[#0F172A] mb-3">
@@ -193,7 +202,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100"
+                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100/80"
               >
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
@@ -220,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* Works With Everything */}
-      <section className="py-16 bg-[#0F172A]">
+      <section className="py-16 md:py-20 bg-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
@@ -244,7 +253,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2"
               >
                 <span>{item.icon}</span>
                 <span className="text-white font-medium">{item.name}</span>
@@ -265,7 +274,7 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2"
               >
                 <span>{item.icon}</span>
                 <span className="text-white font-medium">{item.name}</span>
@@ -294,7 +303,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
               <h3 className="text-xl font-bold text-[#0F172A] mb-4">
                 ✅ Експертна подкрепа
               </h3>
@@ -321,7 +330,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
               <h3 className="text-xl font-bold text-[#0F172A] mb-4">
                 ✅ Знания и обучение
               </h3>
@@ -348,7 +357,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
               <h3 className="text-xl font-bold text-[#0F172A] mb-4">
                 ✅ Общност и обновления
               </h3>
@@ -447,7 +456,7 @@ export default function Home() {
             ].map((review, i) => (
               <div
                 key={i}
-                className="bg-[#F8FAFC] rounded-2xl p-8 border border-gray-100"
+                className="card-hover bg-[#F8FAFC] rounded-2xl p-8 border border-gray-100/80"
               >
                 <div className="flex items-center mb-4">
                   {[...Array(review.rating)].map((_, j) => (
@@ -479,7 +488,7 @@ export default function Home() {
               Имате опит с нас?{" "}
               <Link
                 href="/contact"
-                className="text-purple-600 font-semibold hover:text-purple-700"
+                className="text-purple-600 font-semibold hover:text-purple-700 underline-offset-4 hover:underline transition-colors"
               >
                 Оставете отзив →
               </Link>
@@ -504,7 +513,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#0F172A] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+            className="inline-flex items-center justify-center bg-white text-[#0F172A] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg btn-interactive min-h-[44px]"
           >
             Свържете се с нас →
           </Link>

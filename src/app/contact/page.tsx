@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -52,7 +53,7 @@ export default function Contact() {
           <div className="absolute top-10 left-20 w-72 h-72 bg-purple-500 rounded-full blur-[120px]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Свържете се с нас
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -62,12 +63,12 @@ export default function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <AnimatedSection className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100/80">
                 <h2 className="text-2xl font-bold text-[#0F172A] mb-6">
                   Попълнете формата
                 </h2>
@@ -97,7 +98,7 @@ export default function Contact() {
                           onChange={(e) =>
                             setFormData({ ...formData, name: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 transition-all duration-200 text-[#0F172A] min-h-[44px]"
                           placeholder="Иван Иванов"
                         />
                       </div>
@@ -112,7 +113,7 @@ export default function Contact() {
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 transition-all duration-200 text-[#0F172A] min-h-[44px]"
                           placeholder="ivan@example.com"
                         />
                       </div>
@@ -129,7 +130,7 @@ export default function Contact() {
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
                           }
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 transition-all duration-200 text-[#0F172A] min-h-[44px]"
                           placeholder="+359 88 123 4567"
                         />
                       </div>
@@ -145,7 +146,7 @@ export default function Contact() {
                               service: e.target.value,
                             })
                           }
-                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] bg-white"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 transition-all duration-200 text-[#0F172A] bg-white min-h-[44px]"
                         >
                           <option value="setup">
                             Инсталация и настройка (99 €)
@@ -169,7 +170,7 @@ export default function Contact() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] resize-none"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 transition-all duration-200 text-[#0F172A] resize-none"
                         placeholder="Разкажете ни повече за вашите нужди..."
                       />
                     </div>
@@ -203,7 +204,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="w-full gradient-primary text-white px-6 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 text-lg"
+                      className="w-full gradient-primary text-white px-6 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 text-lg btn-interactive min-h-[44px] disabled:transform-none"
                     >
                       {status === "sending"
                         ? "Изпращане..."
@@ -216,7 +217,7 @@ export default function Contact() {
 
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
                 <h3 className="font-bold text-[#0F172A] mb-4">📧 Имейл</h3>
                 <a
                   href="mailto:info@ailqkai.com"
@@ -229,7 +230,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
                 <h3 className="font-bold text-[#0F172A] mb-4">💬 Discord</h3>
                 <p className="text-[#64748B]">
                   Присъединете се към нашата общност за бърза поддръжка и
@@ -237,7 +238,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100/80">
                 <h3 className="font-bold text-[#0F172A] mb-4">
                   💳 Начини на плащане
                 </h3>
@@ -260,7 +261,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </>
   );
 }

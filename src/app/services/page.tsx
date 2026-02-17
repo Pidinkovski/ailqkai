@@ -16,7 +16,7 @@ export default function Services() {
           <div className="absolute top-20 right-10 w-72 h-72 bg-purple-500 rounded-full blur-[120px]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
             Нашите услуги
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -24,10 +24,16 @@ export default function Services() {
             персонализиран AI асистент.
           </p>
         </div>
+        {/* Wave divider */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0 overflow-hidden">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8FAFC" />
+          </svg>
+        </div>
       </section>
 
       {/* Main Services */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             {/* Service: Setup */}
@@ -83,7 +89,7 @@ export default function Services() {
                 </div>
                 <Link
                   href="/contact"
-                  className="gradient-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm"
+                  className="gradient-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 transition-opacity text-sm btn-interactive min-h-[44px] flex items-center"
                 >
                   Поръчай
                 </Link>
@@ -94,7 +100,7 @@ export default function Services() {
       </section>
 
       {/* Who Is It For */}
-      <section className="py-20 bg-white">
+      <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
@@ -134,7 +140,7 @@ export default function Services() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100"
+                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100/80"
               >
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
@@ -148,7 +154,7 @@ export default function Services() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-[#F8FAFC]">
+      <section className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
@@ -181,7 +187,7 @@ export default function Services() {
               },
             ].map((item, index) => (
               <div key={index} className="relative">
-                <div className="text-7xl font-black text-purple-100 mb-4">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full border-2 border-purple-300 bg-white shadow-md text-purple-600 font-black text-2xl mb-4">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold text-[#0F172A] mb-3">
@@ -197,7 +203,7 @@ export default function Services() {
       </section>
 
       {/* CTA */}
-      <section className="gradient-hero py-20 relative overflow-hidden">
+      <section className="gradient-hero py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute bottom-10 left-20 w-64 h-64 bg-purple-500 rounded-full blur-[100px]" />
         </div>
@@ -211,7 +217,7 @@ export default function Services() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#0F172A] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center justify-center bg-white text-[#0F172A] px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors btn-interactive min-h-[44px]"
           >
             Свържете се с нас →
           </Link>
