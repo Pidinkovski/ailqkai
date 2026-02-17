@@ -11,7 +11,9 @@ export default function Contact() {
     message: "",
     website: "", // honeypot field — bots fill this, humans don't see it
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +28,14 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("sent");
-        setFormData({ name: "", email: "", phone: "", service: "setup", message: "", website: "" });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "setup",
+          message: "",
+          website: "",
+        });
       } else {
         setStatus("error");
       }
@@ -70,7 +79,8 @@ export default function Contact() {
                       Съобщението е изпратено!
                     </h3>
                     <p className="text-[#64748B]">
-                      Ще се свържем с вас възможно най-бързо. Очаквайте отговор до 1 час.
+                      Ще се свържем с вас възможно най-бързо. Очаквайте отговор
+                      до 1 час.
                     </p>
                   </div>
                 ) : (
@@ -84,7 +94,9 @@ export default function Contact() {
                           type="text"
                           required
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, name: e.target.value })
+                          }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
                           placeholder="Иван Иванов"
                         />
@@ -97,7 +109,9 @@ export default function Contact() {
                           type="email"
                           required
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
                           placeholder="ivan@example.com"
                         />
@@ -112,7 +126,9 @@ export default function Contact() {
                         <input
                           type="tel"
                           value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A]"
                           placeholder="+359 88 123 4567"
                         />
@@ -123,11 +139,20 @@ export default function Contact() {
                         </label>
                         <select
                           value={formData.service}
-                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              service: e.target.value,
+                            })
+                          }
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] bg-white"
                         >
-                          <option value="setup">Инсталация и настройка (99 €)</option>
-                          <option value="corporate">Корпоративно решение</option>
+                          <option value="setup">
+                            Инсталация и настройка (99 €)
+                          </option>
+                          <option value="corporate">
+                            Корпоративно решение
+                          </option>
                           <option value="other">Друго / Въпрос</option>
                         </select>
                       </div>
@@ -141,14 +166,19 @@ export default function Contact() {
                         required
                         rows={5}
                         value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-[#0F172A] resize-none"
                         placeholder="Разкажете ни повече за вашите нужди..."
                       />
                     </div>
 
                     {/* Honeypot — invisible to humans, catches bots */}
-                    <div className="absolute opacity-0 -z-10" aria-hidden="true">
+                    <div
+                      className="absolute opacity-0 -z-10"
+                      aria-hidden="true"
+                    >
                       <label htmlFor="website">Website</label>
                       <input
                         type="text"
@@ -157,13 +187,16 @@ export default function Contact() {
                         tabIndex={-1}
                         autoComplete="off"
                         value={formData.website}
-                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, website: e.target.value })
+                        }
                       />
                     </div>
 
                     {status === "error" && (
                       <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm">
-                        Възникна грешка. Моля, опитайте отново или ни пишете на info@ailqkai.com
+                        Възникна грешка. Моля, опитайте отново или ни пишете на
+                        info@ailqkai.com
                       </div>
                     )}
 
@@ -172,7 +205,9 @@ export default function Contact() {
                       disabled={status === "sending"}
                       className="w-full gradient-primary text-white px-6 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 text-lg"
                     >
-                      {status === "sending" ? "Изпращане..." : "Изпратете съобщение →"}
+                      {status === "sending"
+                        ? "Изпращане..."
+                        : "Изпратете съобщение →"}
                     </button>
                   </form>
                 )}
@@ -183,31 +218,43 @@ export default function Contact() {
             <div className="lg:col-span-2 space-y-6">
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
                 <h3 className="font-bold text-[#0F172A] mb-4">📧 Имейл</h3>
-                <a href="mailto:info@ailqkai.com" className="text-purple-600 hover:text-purple-700 font-medium">
+                <a
+                  href="mailto:info@ailqkai.com"
+                  className="text-purple-600 hover:text-purple-700 font-medium"
+                >
                   info@ailqkai.com
                 </a>
-                <p className="text-[#64748B] text-sm mt-2">Отговаряме до 1 час</p>
+                <p className="text-[#64748B] text-sm mt-2">
+                  Отговаряме до 1 час
+                </p>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
                 <h3 className="font-bold text-[#0F172A] mb-4">💬 Discord</h3>
                 <p className="text-[#64748B]">
-                  Присъединете се към нашата общност за бърза поддръжка и дискусии.
+                  Присъединете се към нашата общност за бърза поддръжка и
+                  дискусии.
                 </p>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#0F172A] mb-4">💳 Начини на плащане</h3>
+                <h3 className="font-bold text-[#0F172A] mb-4">
+                  💳 Начини на плащане
+                </h3>
                 <div className="space-y-2 text-[#64748B]">
-                  <p>• Банкова карта (Visa, Mastercard)</p>
+                  <p>• По банков път с фактура</p>
                   <p>• Revolut</p>
                 </div>
               </div>
 
               <div className="bg-purple-50 rounded-2xl p-8 border border-purple-100">
-                <h3 className="font-bold text-[#0F172A] mb-3">🚀 Започнете сега</h3>
+                <h3 className="font-bold text-[#0F172A] mb-3">
+                  🚀 Започнете сега
+                </h3>
                 <p className="text-[#64748B] text-sm leading-relaxed">
-                  Поръчайте пълна инсталация и настройка за само <strong className="text-purple-600">99 €</strong> и получете вашия персонален AI асистент!
+                  Поръчайте пълна инсталация и настройка за само{" "}
+                  <strong className="text-purple-600">99 €</strong> и получете
+                  вашия персонален AI асистент!
                 </p>
               </div>
             </div>

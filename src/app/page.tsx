@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PhoneVideoFrame from "@/components/PhoneVideoFrame";
 
 export default function Home() {
   return (
@@ -16,18 +17,19 @@ export default function Home() {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
                 <div className="pulse-dot" />
-                <span className="text-green-400 text-sm font-medium">Приемаме нови клиенти</span>
+                <span className="text-green-400 text-sm font-medium">
+                  Приемаме нови клиенти
+                </span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                Вашият{" "}
-                <span className="text-gradient">AI асистент</span>
+                Вашият <span className="text-gradient">AI асистент</span>
                 <br />
                 настроен от професионалисти
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed">
-                Инсталираме, конфигурираме и настройваме персонален AI асистент 
+                Инсталираме, конфигурираме и настройваме персонален AI асистент
                 специално за вашите нужди. Сигурно, бързо и без главоболия.
               </p>
 
@@ -49,47 +51,22 @@ export default function Home() {
 
             {/* Right side - Phone mockup */}
             <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Phone frame */}
-                <div className="w-[280px] h-[580px] bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-4 border-gray-800">
-                  {/* Phone notch */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-gray-900 rounded-b-2xl z-10" />
-                  {/* Phone screen */}
-                  <div className="w-full h-full bg-white/10 backdrop-blur-sm rounded-[2.5rem] overflow-hidden flex items-center justify-center">
-                    {/* Placeholder - replace with actual video */}
-                    <div className="text-center p-6">
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-white/70 text-sm">Демо видео</p>
-                      <p className="text-white/50 text-xs mt-2">Telegram / WhatsApp</p>
-                    </div>
-                    {/* When you have video, replace above with:
-                    <video 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/demo-video.mp4" type="video/mp4" />
-                    </video>
-                    */}
-                  </div>
-                </div>
-                {/* Decorative glow */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/30 to-indigo-500/30 rounded-[4rem] blur-2xl -z-10" />
-              </div>
+              <PhoneVideoFrame />
             </div>
           </div>
         </div>
 
         {/* Wave divider */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F8FAFC"/>
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+              fill="#F8FAFC"
+            />
           </svg>
         </div>
       </section>
@@ -102,7 +79,8 @@ export default function Home() {
               Защо ви е нужен AI асистент?
             </h2>
             <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
-              Изкуственият интелект вече не е бъдеще — той е настояще. Ето как може да промени работата ви.
+              Изкуственият интелект вече не е бъдеще — той е настояще. Ето как
+              може да промени работата ви.
             </p>
           </div>
 
@@ -132,8 +110,12 @@ export default function Home() {
                 className="card-hover bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-3">{item.title}</h3>
-                <p className="text-[#64748B] leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[#64748B] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -157,53 +139,67 @@ export default function Home() {
               {
                 icon: "🛒",
                 title: "Онлайн магазин мениджър",
-                description: "Обработва поръчки, създава товарителници, пише фактури и изпраща имейли на клиенти автоматично.",
+                description:
+                  "Обработва поръчки, създава товарителници, пише фактури и изпраща имейли на клиенти автоматично.",
               },
               {
                 icon: "🌐",
                 title: "Уебсайт създател",
-                description: "Създава лендинг страници и малки сайтове от текстово описание — за минути, не дни.",
+                description:
+                  "Създава лендинг страници и малки сайтове от текстово описание — за минути, не дни.",
               },
               {
                 icon: "💼",
                 title: "Бизнес анализатор",
-                description: "Анализира данни от продажби, генерира отчети и дава препоръки за подобряване на бизнеса.",
+                description:
+                  "Анализира данни от продажби, генерира отчети и дава препоръки за подобряване на бизнеса.",
               },
               {
                 icon: "📱",
                 title: "Социални мрежи мениджър",
-                description: "Планира постове, генерира текстове и изображения, отговаря на коментари и съобщения.",
+                description:
+                  "Планира постове, генерира текстове и изображения, отговаря на коментари и съобщения.",
               },
               {
                 icon: "📧",
                 title: "Имейл асистент",
-                description: "Сортира входящата поща, маркира важното, отговаря на рутинни запитвания и ви известява само за спешното.",
+                description:
+                  "Сортира входящата поща, маркира важното, отговаря на рутинни запитвания и ви известява само за спешното.",
               },
               {
                 icon: "📊",
                 title: "Счетоводен помощник",
-                description: "Категоризира разходи, подготвя данни за счетоводителя, следи фактури и плащания.",
+                description:
+                  "Категоризира разходи, подготвя данни за счетоводителя, следи фактури и плащания.",
               },
               {
                 icon: "🎯",
                 title: "Маркетинг стратег",
-                description: "Генерира идеи за кампании, пише рекламни текстове, анализира конкуренцията.",
+                description:
+                  "Генерира идеи за кампании, пише рекламни текстове, анализира конкуренцията.",
               },
               {
                 icon: "📞",
                 title: "Клиентска поддръжка",
-                description: "Отговаря на често задавани въпроси 24/7, ескалира само сложните случаи към вас.",
+                description:
+                  "Отговаря на често задавани въпроси 24/7, ескалира само сложните случаи към вас.",
               },
               {
                 icon: "🗓️",
                 title: "Личен планировчик",
-                description: "Организира календара, напомня за срокове, приоритизира задачи и следи цели.",
+                description:
+                  "Организира календара, напомня за срокове, приоритизира задачи и следи цели.",
               },
             ].map((item, i) => (
-              <div key={i} className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100">
+              <div
+                key={i}
+                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100"
+              >
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
+                <p className="text-[#64748B] text-sm leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -213,7 +209,11 @@ export default function Home() {
               💬 И всичко това само пишейки си с твоя AI асистент
             </p>
             <p className="text-lg text-[#64748B] mt-2">
-              през <span className="font-medium text-purple-600">Telegram</span>, <span className="font-medium text-purple-600">Discord</span>, <span className="font-medium text-purple-600">iMessage</span>, <span className="font-medium text-purple-600">WhatsApp</span> и други
+              през <span className="font-medium text-purple-600">Telegram</span>
+              , <span className="font-medium text-purple-600">Discord</span>,{" "}
+              <span className="font-medium text-purple-600">iMessage</span>,{" "}
+              <span className="font-medium text-purple-600">WhatsApp</span> и
+              други
             </p>
           </div>
         </div>
@@ -242,7 +242,10 @@ export default function Home() {
               { name: "Claude", icon: "🤖" },
               { name: "GPT", icon: "🧠" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+              <div
+                key={i}
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
+              >
                 <span>{item.icon}</span>
                 <span className="text-white font-medium">{item.name}</span>
               </div>
@@ -260,7 +263,10 @@ export default function Home() {
               { name: "Excel", icon: "📊" },
               { name: "И още...", icon: "✨" },
             ].map((item, i) => (
-              <div key={i} className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+              <div
+                key={i}
+                className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2"
+              >
                 <span>{item.icon}</span>
                 <span className="text-white font-medium">{item.name}</span>
               </div>
@@ -281,61 +287,90 @@ export default function Home() {
               💬 Поддръжка и общност
             </h2>
             <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
-              Когато купувате AI асистент, не получавате просто приложение — получавате достъп до нашето Discord community, в което ще намерите:
+              Когато купувате AI асистент, не получавате просто приложение —
+              получавате достъп до нашето Discord community, в което ще
+              намерите:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">✅ Експертна подкрепа</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
+                ✅ Експертна подкрепа
+              </h3>
               <ul className="space-y-3 text-[#64748B]">
                 <li className="flex items-start space-x-2">
                   <span>🚀</span>
-                  <span><strong>Директен контакт</strong> с хората, които са настроили асистента ви</span>
+                  <span>
+                    <strong>Директен контакт</strong> с хората, които са
+                    настроили асистента ви
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>⚡</span>
-                  <span><strong>Бърза реакция</strong> — отговори за минути, не дни</span>
+                  <span>
+                    <strong>Бърза реакция</strong> — отговори за минути, не дни
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>🎫</span>
-                  <span><strong>Система за тикети</strong> за сложни проблеми</span>
+                  <span>
+                    <strong>Система за тикети</strong> за сложни проблеми
+                  </span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">✅ Знания и обучение</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
+                ✅ Знания и обучение
+              </h3>
               <ul className="space-y-3 text-[#64748B]">
                 <li className="flex items-start space-x-2">
                   <span>📚</span>
-                  <span><strong>База знания</strong> — готови решения на често срещани проблеми</span>
+                  <span>
+                    <strong>База знания</strong> — готови решения на често
+                    срещани проблеми
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>🎓</span>
-                  <span><strong>Обучения и уроци</strong> — извлечете максимума</span>
+                  <span>
+                    <strong>Обучения и уроци</strong> — извлечете максимума
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>📖</span>
-                  <span><strong>Ръководства</strong> стъпка по стъпка</span>
+                  <span>
+                    <strong>Ръководства</strong> стъпка по стъпка
+                  </span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">✅ Общност и обновления</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-4">
+                ✅ Общност и обновления
+              </h3>
               <ul className="space-y-3 text-[#64748B]">
                 <li className="flex items-start space-x-2">
                   <span>👥</span>
-                  <span><strong>Споделяйте идеи</strong> с други потребители</span>
+                  <span>
+                    <strong>Споделяйте идеи</strong> с други потребители
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>🔄</span>
-                  <span><strong>Редовни обновления</strong> — научавате първи за нови функции</span>
+                  <span>
+                    <strong>Редовни обновления</strong> — научавате първи за
+                    нови функции
+                  </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span>💡</span>
-                  <span><strong>Готови автоматизации</strong> — научете от другите</span>
+                  <span>
+                    <strong>Готови автоматизации</strong> — научете от другите
+                  </span>
                 </li>
               </ul>
             </div>
@@ -343,12 +378,16 @@ export default function Home() {
 
           <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-8 border border-purple-200">
             <div className="text-center">
-              <h3 className="text-xl font-bold text-[#0F172A] mb-3">❓ Какво става когато нещо не работи?</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-3">
+                ❓ Какво става когато нещо не работи?
+              </h3>
               <p className="text-[#64748B] mb-4">
-                AI асистентът е мощен инструмент, но понякога има нужда от помощ — нова функция, пренастройка, или нещо спря да работи.
+                AI асистентът е мощен инструмент, но понякога има нужда от помощ
+                — нова функция, пренастройка, или нещо спря да работи.
               </p>
               <p className="text-lg font-semibold text-purple-700">
-                С Discord достъп вие НЕ сте сами: Пишете → Получавате помощ → Проблемът е решен ✅
+                С Discord достъп вие НЕ сте сами: Пишете → Получавате помощ →
+                Проблемът е решен ✅
               </p>
             </div>
           </div>
@@ -370,10 +409,28 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {[
               {
-                name: "Георги М.",
+                name: "Галин Г.",
                 role: "Собственик на онлайн магазин",
                 rating: 5,
                 text: "AI асистентът напълно промени начина, по който управлявам магазина си. Поръчките се обработват автоматично, фактурите се пишат сами. Спестявам поне 3 часа на ден!",
+              },
+              {
+                name: "Иван П.",
+                role: "Junior програмист, СофтУни",
+                rating: 5,
+                text: "Junior програмист съм и тъкмо завърших СофтУни. Благодарение на AI асистента създадох уебсайт за буквално 7 минути, който би ми отнел поне две седмици да напиша кода. Ненормално.",
+              },
+              {
+                name: "Никола Т.",
+                role: "Офис мениджър",
+                rating: 5,
+                text: "Не му се спи, не е изморен, снощи не е препил и може абсолютно всичко, което човек би извършил на компютър — 24/7. Не знам по-добър асистент дали изобщо ще съществува.",
+              },
+              {
+                name: "Петър В.",
+                role: "Предприемач",
+                rating: 5,
+                text: "Дадох му достъп до Slack, Discord и iMessage само да чете. Асистентът минава през всичките ми чатове и ми изкарва списък с най-важните задачи — на кого какво съм обещал, до кога трябва да свърша и т.н. ВЕЛИКО.",
               },
               {
                 name: "Мария К.",
@@ -388,10 +445,15 @@ export default function Home() {
                 text: "Екипът беше изключително професионален. Настроиха всичко за часове и ми показаха как да го използвам. Поддръжката в Discord е невероятна — отговарят за минути.",
               },
             ].map((review, i) => (
-              <div key={i} className="bg-[#F8FAFC] rounded-2xl p-8 border border-gray-100">
+              <div
+                key={i}
+                className="bg-[#F8FAFC] rounded-2xl p-8 border border-gray-100"
+              >
                 <div className="flex items-center mb-4">
                   {[...Array(review.rating)].map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-xl">⭐</span>
+                    <span key={j} className="text-yellow-400 text-xl">
+                      ⭐
+                    </span>
                   ))}
                 </div>
                 <p className="text-[#0F172A] leading-relaxed mb-6 italic">
@@ -402,7 +464,9 @@ export default function Home() {
                     {review.name.charAt(0)}
                   </div>
                   <div className="ml-4">
-                    <p className="font-semibold text-[#0F172A]">{review.name}</p>
+                    <p className="font-semibold text-[#0F172A]">
+                      {review.name}
+                    </p>
                     <p className="text-sm text-[#64748B]">{review.role}</p>
                   </div>
                 </div>
@@ -413,7 +477,10 @@ export default function Home() {
           <div className="text-center mt-10">
             <p className="text-[#64748B]">
               Имате опит с нас?{" "}
-              <Link href="/contact" className="text-purple-600 font-semibold hover:text-purple-700">
+              <Link
+                href="/contact"
+                className="text-purple-600 font-semibold hover:text-purple-700"
+              >
                 Оставете отзив →
               </Link>
             </p>
@@ -432,8 +499,8 @@ export default function Home() {
             Готови ли сте за вашия AI асистент?
           </h2>
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
-            Свържете се с нас днес и започнете да работите по-умно утре. 
-            Без ангажименти — просто ни пишете.
+            Свържете се с нас днес и започнете да работите по-умно утре. Без
+            ангажименти — просто ни пишете.
           </p>
           <Link
             href="/contact"

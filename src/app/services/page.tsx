@@ -20,7 +20,8 @@ export default function Services() {
             Нашите услуги
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Всичко, от което се нуждаете, за да имате работещ, сигурен и персонализиран AI асистент.
+            Всичко, от което се нуждаете, за да имате работещ, сигурен и
+            персонализиран AI асистент.
           </p>
         </div>
       </section>
@@ -38,11 +39,13 @@ export default function Services() {
                 Пълна инсталация и настройка
               </h2>
               <p className="text-[#64748B] leading-relaxed mb-6">
-                Инсталираме AI асистент на вашия компютър или виртуална машина. 
-                Конфигурираме го за вашите специфични нужди — от езикови настройки 
-                до интеграция с инструментите, които използвате.
+                Инсталираме AI асистент на вашия компютър или виртуална машина.
+                Конфигурираме го за вашите специфични нужди — от езикови
+                настройки до интеграция с инструментите, които използвате.
               </p>
-              <h3 className="font-semibold text-[#0F172A] mb-3">Какво включва:</h3>
+              <h3 className="font-semibold text-[#0F172A] mb-3">
+                Какво включва:
+              </h3>
               <ul className="space-y-2 mb-6">
                 {[
                   "Инсталация на софтуера на вашата машина",
@@ -54,8 +57,18 @@ export default function Services() {
                   "Тестване и оптимизация",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start space-x-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span className="text-[#0F172A]">{item}</span>
                   </li>
@@ -63,7 +76,9 @@ export default function Services() {
               </ul>
               <div className="flex items-center justify-between bg-purple-50 rounded-xl p-4">
                 <div>
-                  <span className="text-3xl font-bold text-[#0F172A]">99 €</span>
+                  <span className="text-3xl font-bold text-[#0F172A]">
+                    99 €
+                  </span>
                   <span className="text-[#64748B] ml-2">еднократно</span>
                 </div>
                 <Link
@@ -95,28 +110,37 @@ export default function Services() {
               {
                 icon: "🎓",
                 title: "Ученици и студенти",
-                description: "Помощ с домашни, есета, изследвания и учене на нови неща.",
+                description:
+                  "Помощ с домашни, есета, изследвания и учене на нови неща.",
               },
               {
                 icon: "💼",
                 title: "Професионалисти",
-                description: "Автоматизация на имейли, документи, анализи и ежедневни задачи.",
+                description:
+                  "Автоматизация на имейли, документи, анализи и ежедневни задачи.",
               },
               {
                 icon: "🏢",
                 title: "Компании",
-                description: "3x повече продуктивност. AI за целия екип с корпоративна сигурност.",
+                description:
+                  "3x повече продуктивност. AI за целия екип с корпоративна сигурност.",
               },
               {
                 icon: "🔧",
                 title: "Технически хора",
-                description: "Правилна конфигурация, сигурност и оптимизация от експерт.",
+                description:
+                  "Правилна конфигурация, сигурност и оптимизация от експерт.",
               },
             ].map((item, i) => (
-              <div key={i} className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100">
+              <div
+                key={i}
+                className="card-hover bg-[#F8FAFC] rounded-2xl p-6 border border-gray-100"
+              >
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#0F172A] mb-2">{item.title}</h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{item.description}</p>
+                <p className="text-[#64748B] text-sm leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -153,15 +177,19 @@ export default function Services() {
                 step: "03",
                 title: "Работите по-умно",
                 description:
-                  "Започвате да използвате вашия асистент веднага. Плюс — получавате достъп до нашата общност за поддръжка.",
+                  "Започвате да използвате вашия асистент веднага. Плюс — получавате достъп за един месец до нашата общност за поддръжка в Discord.",
               },
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="text-7xl font-black text-purple-100 mb-4">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-[#0F172A] mb-3">{item.title}</h3>
-                <p className="text-[#64748B] leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[#64748B] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -178,7 +206,8 @@ export default function Services() {
             Готови да започнете?
           </h2>
           <p className="text-gray-300 text-lg mb-8">
-            Свържете се с нас и ще ви помогнем да изберете най-доброто решение за вас.
+            Свържете се с нас и ще ви помогнем да изберете най-доброто решение
+            за вас.
           </p>
           <Link
             href="/contact"
