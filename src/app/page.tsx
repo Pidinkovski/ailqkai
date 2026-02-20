@@ -11,9 +11,9 @@ export default function Home() {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-20 md:py-28">
+          {/* Desktop: original layout - badge + content left, video right */}
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 mb-8 shadow-[0_0_20px_rgba(74,222,128,0.25),0_0_40px_rgba(74,222,128,0.1)]">
                 <div className="pulse-dot" />
@@ -32,7 +32,7 @@ export default function Home() {
               </h1>
 
               <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0 space-y-4">
-                <p className="md:whitespace-nowrap">Изкуствен интелект, който действително прави неща.</p>
+                <p className="md:whitespace-nowrap font-bold">Изкуствен интелект, който действително прави неща.</p>
                 <p>
                   Инсталираме, конфигурираме и настройваме персонален AI
                   асистент специално за вашите нужди.
@@ -55,9 +55,58 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right side - Phone mockup */}
             <div className="relative flex justify-center lg:justify-end">
               <PhoneVideoFrame />
+            </div>
+          </div>
+
+          {/* Mobile: badge → video → content, tight spacing between badge and video */}
+          <div className="grid grid-cols-1 gap-y-2 gap-x-0 lg:hidden">
+            <div className="flex justify-center">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 shadow-[0_0_20px_rgba(74,222,128,0.25),0_0_40px_rgba(74,222,128,0.1)]">
+                <div className="pulse-dot" />
+                <span className="text-green-400 text-sm font-medium">
+                  Приемаме нови клиенти
+                </span>
+              </div>
+            </div>
+
+            <div className="relative flex justify-center -mt-0.5">
+              <PhoneVideoFrame />
+            </div>
+
+            <div className="text-center pt-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Вашият{" "}
+                <span className="text-gradient text-gradient-glow">
+                  AI асистент
+                </span>
+                <br />
+                настроен от професионалисти
+              </h1>
+
+              <div className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed mx-auto lg:mx-0 space-y-4">
+                <p className="md:whitespace-nowrap font-bold">Изкуствен интелект, който действително прави неща.</p>
+                <p>
+                  Инсталираме, конфигурираме и настройваме персонален AI
+                  асистент специално за вашите нужди.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+                <Link
+                  href="/contact"
+                  className="gradient-primary text-white px-8 py-4 rounded-xl text-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-purple-500/25 w-full sm:w-auto text-center btn-interactive min-h-[44px] flex items-center justify-center"
+                >
+                  Искам AI асистент →
+                </Link>
+                <Link
+                  href="/services"
+                  className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all w-full sm:w-auto text-center btn-interactive min-h-[44px] flex items-center justify-center"
+                >
+                  Научете повече
+                </Link>
+              </div>
             </div>
           </div>
         </div>

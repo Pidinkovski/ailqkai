@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -7,6 +8,7 @@ const team = [
   {
     name: "Йордан М.",
     initials: "YM",
+    image: "/yordan.jpg",
     role: "Основател",
     description: (
       <>
@@ -70,11 +72,25 @@ export default function StoryWithTeam({
             >
               <div className="flex flex-col sm:flex-row sm:items-start gap-6">
                 <div
-                  className={`flex-shrink-0 w-20 h-20 rounded-full gradient-primary flex items-center justify-center text-white font-bold text-xl border-2 ${
+                  className={`flex-shrink-0 w-20 h-20 rounded-full overflow-hidden border-2 ${
                     person.isFounder ? "border-purple-500" : "border-purple-200"
                   }`}
                 >
-                  {person.initials}
+                  {"image" in person && person.image ? (
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      className={`w-full h-full gradient-primary flex items-center justify-center text-white font-bold text-xl`}
+                    >
+                      {person.initials}
+                    </div>
+                  )}
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-xl font-bold text-[#0F172A] mb-1">
